@@ -210,12 +210,10 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <!---------------- CAROUSEL PLAY AND PAUSE BUTTONS ----------------------------->
                     <div class="btn-group" id="carouselButton">
-                        <button class="btn btn-danger btn-sm" id="carousel-pause">
-                            <span class="fa fa-pause"></span>
-                        </button>
-                        <button class="btn btn-danger btn-sm" id="carousel-play">
-                            <span class="fa fa-play"></span>
+                        <button class="btn btn-danger btn-sm" id="carouselButton">
+                            <span id="carousel-button-icon" class="fa fa-pause"></span>
                         </button>
                     </div>
                 </div>
@@ -364,7 +362,40 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- JavaScript code to to activate the Carousel buttons play and stop -->
+    <!----------- JavaScript code to to activate the Carousel to play and pause with the same button--->
+    <script>
+         $(document).ready(function(){
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("span").hasClass('fa-pause')) {
+                    $("#mycarousel").carousel('pause');
+                    $("#carouselButton").children("span").removeClass('fa-pause');
+                    $("#carouselButton").children("span").addClass('fa-play');
+                }
+                else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                    $("#mycarousel").carousel('cycle');
+                    $("#carouselButton").children("span").removeClass('fa-play');
+                    $("#carouselButton").children("span").addClass('fa-pause');                    
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+
+<!------------ Tooltip ---------------------------------
+<a role="button" class="btn btn-block nav-link btn-warning"
+                    data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
+                    data-placement="bottom" href="#reserveform">Reserve Table</a>
+<script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+
+---------- JavaScript code to to activate the Carousel buttons PLAY and PAUSE ---------------------------------
     <script>
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 2000 } );
@@ -376,20 +407,4 @@
             });
         });
     </script>
-
-</body>
-
-</html>
-
-<!-- Tooltip 
-
-<a role="button" class="btn btn-block nav-link btn-warning"
-                    data-toggle="tooltip" data-html="true"  title="Or Call us at  <br><strong>+852 12345678</strong>"
-                    data-placement="bottom" href="#reserveform">Reserve Table</a>
-<script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
-
 -->
