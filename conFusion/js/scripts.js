@@ -11,42 +11,29 @@
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
             });
-        });
 
-
-        $(document).ready(function(){
             $("#ReserveTableButton").click(function(){
                 $('#reserveTableModal').modal('show')
             })
-        });
-
-        $(document).ready(function(){
             $("#close_button_modal").click(function(){
                 $('#reserveTableModal').modal('hide')
             })
-        });
-
-        $(document).ready(function(){
             $("#cancel_button_modal").click(function(){
                 $('#reserveTableModal').modal('hide')
             })
-        });
 
-    
 
-          $(document).ready(function(){
             $("#loginHyperlink").click(function(){
                 $('#loginModal').modal('show')
             })
-        });
-        $(document).ready(function(){
             $("#closeButtonModalLogin ").click(function(){
                 $('#loginModal').modal('hide')
             })
+            $(document).ready(function(){
+                $("#cancelButtonModalLogin").click(function(){
+                    $('#loginModal').modal('hide')
+                })
         });
-        $(document).ready(function(){
-            $("#cancelButtonModalLogin").click(function(){
-                $('#loginModal').modal('hide')
-            })
-        });
+
+    });
 
